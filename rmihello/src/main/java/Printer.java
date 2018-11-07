@@ -3,8 +3,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import sun.rmi.server.UnicastRef2;
-
 public class Printer extends UnicastRemoteObject implements PrintService{
     boolean isOn = false;
 

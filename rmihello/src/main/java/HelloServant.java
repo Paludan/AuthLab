@@ -1,6 +1,5 @@
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import sun.rmi.server.UnicastRef2;
 
 public class HelloServant extends UnicastRemoteObject implements HelloService{
 
