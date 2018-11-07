@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Client",
+            "args": "",
+            "projectName": "rmihello"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ApplicationServer",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "ApplicationServer",
+            "args": "",
+            "projectName": "rmihello"
+        }
+    ]
+}
