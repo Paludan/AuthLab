@@ -6,6 +6,7 @@ import java.util.List;
 import sun.rmi.server.UnicastRef2;
 
 public class Printer extends UnicastRemoteObject implements PrintService{
+    boolean isOn = false;
 
     String[] printQueue = new String[0];
     List<String> pQL = new ArrayList<String>();
@@ -20,21 +21,21 @@ public class Printer extends UnicastRemoteObject implements PrintService{
 
     public void queue() throws RemoteException{
 
-       // pQL.stream().forEach(e -> System.out.println(e));
+       pQL.stream().forEach(e -> System.out.println(e));
     }
-
     public void topQueue(int job) throws RemoteException{
-        int m = pQL.indexOf(job);
-        String jobToMove = pQL.get(m);
+        String jobToMove = pQL.get(job);
         pQL.remove(jobToMove);
         pQL.add(0, jobToMove);
     }
 
     public void start() throws RemoteException{
+        isOn = true;
         System.out.println("Print server has started");
     }
 
     public void stop() throws RemoteException{
+        isOn = false;
         System.out.println("Print server has stopped");
     }
 
@@ -42,18 +43,24 @@ public class Printer extends UnicastRemoteObject implements PrintService{
         stop();
         pQL.clear();
         start();
+
+        System.out.println("Print server has been restarted");
     }
 
     public void status() throws RemoteException{
+        String pOff = "The print server is offline", pOn = "The print server is online";
 
+        System.out.println(isOn ? pOn : pOff);
     }
 
     public void readConfig(String parameter) throws RemoteException{
-
+        System.out.println(parameter);
     }
 
     public void setConfig(String parameter, String value) throws RemoteException{
+        parameter = value;
 
+        System.out.println(parameter + " has been set to: " + value);
     }
 }
 
