@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class ApplicationServer {
     public static final String password = "81dc9bdb52d04dc20036dbd8313ed055";
+    public static final String user = "Lee";
 
     public static void main(String[] args) throws RemoteException{
         Scanner scanner = new Scanner(System.in);
@@ -26,7 +27,7 @@ public class ApplicationServer {
         System.out.println("Authentication successful!");
 
         Registry registry = LocateRegistry.createRegistry(5099);
-        registry.rebind("hello", new HelloServant());
+        registry.rebind("Printer", new Printer());
 
         scanner.close();
     }
