@@ -2,14 +2,13 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.security.MessageDigest;
-import java.util.Base64;
 import java.util.Scanner;
 
 public class ApplicationServer {
     public static final String password = "81dc9bdb52d04dc20036dbd8313ed055";
     public static final String user = "Lee";
 
-    public static void main(String[] args) throws RemoteException{
+    public static void main(String[] args) throws RemoteException {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter the password");
