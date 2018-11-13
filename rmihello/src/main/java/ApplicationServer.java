@@ -14,7 +14,6 @@ public class ApplicationServer {
     }
 
     static boolean isAuthenticated (String s) {
-        Boolean reply = false;
         Boolean u1 = false, u2 = false;
         try {
             byte[] bytesOfMessage = s.getBytes("UTF-8");
@@ -28,12 +27,16 @@ public class ApplicationServer {
                 u1 = password.charAt(i) == hashString.charAt(i);
                 u2 = password2.charAt(i) == hashString.charAt(i);
             }
+            
             if(u1){
                 System.out.println("Server accessed by user: Lee");
-                return u1;}
-            else {
+                return u1;
+            } else if (u2) {
                 System.out.println("Server accessed by user: Phil");
-                return u2; }
+                return u2; 
+            } else
+                return false;
+                
         } catch (Exception e)
         {
             System.out.println(e);

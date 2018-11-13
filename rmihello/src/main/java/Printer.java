@@ -61,9 +61,8 @@ public class Printer extends UnicastRemoteObject implements PrintService{
     }
 
     public void setConfig(String parameter, String value) throws RemoteException{
-        parameter = value;
-
         System.out.println(parameter + " has been set to: " + value);
+        parameter = value;
     }
 
     public boolean auth (String password)
