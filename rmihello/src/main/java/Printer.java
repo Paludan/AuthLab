@@ -16,6 +16,7 @@ public class Printer extends UnicastRemoteObject implements PrintService{
 
     public String print(String filename, String printer) throws RemoteException{
         pQL.add(filename);
+        System.out.println("File: " + filename + " added to " + printer);
         return "Filename: " + filename + " added to queue on Printer : " + printer;
     }
 
@@ -67,6 +68,7 @@ public class Printer extends UnicastRemoteObject implements PrintService{
 
     public boolean auth (String password)
     {
+       // ApplicationServer.getUser();
         return ApplicationServer.isAuthenticated(password);
     }
 }

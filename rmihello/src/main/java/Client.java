@@ -36,7 +36,7 @@ import java.util.Scanner;
         {
             setupCLI();
             String input = scanner.nextLine();
-            clearConsole();
+            //clearConsole();
 
             switch(Integer.parseInt(input))
             {
